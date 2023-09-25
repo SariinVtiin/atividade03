@@ -10,15 +10,15 @@ typedef struct {
 // Calculo
 
 double areacalcular(Point vertices[], int numVertices) {
-    double result = 0.0;
+    double resultadovert = 0.0;
 
     for (int i = 0; i < numVertices - 1; i++) {
-        result += (vertices[i].x * vertices[i + 1].y - vertices[i + 1].x * vertices[i].y);
+        resultadovert += (vertices[i].x * vertices[i + 1].y - vertices[i + 1].x * vertices[i].y);
     }
 
-    result += (vertices[numVertices - 1].x * vertices[0].y - vertices[0].x * vertices[numVertices - 1].y);
+    resultadovert += (vertices[numVertices - 1].x * vertices[0].y - vertices[0].x * vertices[numVertices - 1].y);
 
-    return fabs(result) / 2.0; 
+    return fabs(resultadovert) / 2.0; 
 }
 
 int main() {
@@ -84,6 +84,8 @@ int main() {
     
     fclose(arquivosaida);
     
+    printf("Arquivo de saida criado com sucesso!");
+
     free(points);
     
     return 0;
